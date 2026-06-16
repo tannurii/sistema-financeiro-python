@@ -1,2 +1,24 @@
-# sistema-financeiro-python
-Sistema de controle financeiro em Python com armazenamento de dados e análise utilizando Pandas.
+# SISTEMA FINANCEIRO EM PYTHONS
+
+Sistema simples de controle financeiro desenvolvido em python, permitindo registrar e analisar receitas e despesas.
+
+## FUNCIONALIDADES
+
+- Adição de transações (receitas e despesas)
+- Cálculo do saldo total
+- Estrutura organizada para evolução do sistema
+
+## TECNOLOGIAS UTILIZADAS
+
+- Python
+
+## OBJETIVO
+
+Praticar lógica de programação, estrutura de dados e organização de código em um projeto com aplicação real.
+
+## PRÓXIMOS PASSOS
+
+- Persistência dos dados (JSON ou Banco de Dados)
+- Filtros por categoria e data
+- Análise com pandas
+- Dashboard interativo
