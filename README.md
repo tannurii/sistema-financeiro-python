@@ -1,4 +1,4 @@
-# SISTEMA FINANCEIRO EM PYTHONS
+# SISTEMA FINANCEIRO EM PYTHON
 
 Sistema simples de controle financeiro desenvolvido em python, permitindo registrar e analisar receitas e despesas.
 
