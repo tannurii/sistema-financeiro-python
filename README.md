@@ -18,7 +18,7 @@ Praticar lógica de programação, estrutura de dados e organização de código
 
 ## PRÓXIMOS PASSOS
 
-- Persistência dos dados (JSON ou Banco de Dados)
+- Persistência dos dados (JSON ou Banco de Dados) ✅ Feito em JSON
 - Filtros por categoria e data
 - Análise com pandas
 - Dashboard interativo
