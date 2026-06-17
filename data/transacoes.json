@@ -1,7 +1,7 @@
 [
     {
         "valor": 1000,
-        "categoria": "salario",
+        "categoria": "sal\u00e1rio",
         "tipo": "receita",
         "data": "2026-01-01"
     },
@@ -13,7 +13,7 @@
     },
     {
         "valor": 240,
-        "categoria": "farm\u00e1cia",
+        "categoria": "alimenta\u00e7\u00e3o",
         "tipo": "despesa",
         "data": "2026-01-03"
     }
