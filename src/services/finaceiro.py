@@ -21,8 +21,8 @@ class SistemaFinanceiro:
     self.transacoes = carregar()
     print("LISTA DE TRANSAÇÕES:")
     for transacao in self.transacoes:
-
       print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}")
+      
 
     
   def calcular_saldo(self):
@@ -104,7 +104,7 @@ class SistemaFinanceiro:
       return(d["ano"], d["mes"], d["dia"])
     
     for transacao in transacao_por_data:
-      if converter_data(inicio) <= converter_data(transacao["data"]) <= converter_data(fim):
+      if converter_data(inicio) <= converter_data(transacao["data"])<= converter_data(fim):
         print(transacao)
   
     

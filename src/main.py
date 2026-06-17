@@ -8,7 +8,7 @@ sistema.adicionar_transacao(valor=1000, categoria="salário", tipo="receita", da
 sistema.adicionar_transacao(valor=200, categoria="alimentação", tipo="despesa", data="2026-01-02")
 sistema.adicionar_transacao(valor=240, categoria="alimentação", tipo="despesa", data="2026-01-03")
 
-#sistema.listar_transacoes()
+sistema.listar_transacoes()
 
 """
 print()
