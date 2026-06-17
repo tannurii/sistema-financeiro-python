@@ -100,10 +100,14 @@ class SistemaFinanceiro:
       "mes": int(fim[1]),
       "dia": int(fim[2])
     }
+    def converter_data(d):
+      return(d["ano"], d["mes"], d["dia"])
+    
     for transacao in transacao_por_data:
-      if transacao["data"]["ano"] == inicio["ano"] and transacao["data"]["mes"] >= inicio["mes"] and transacao["data"]["dia"] >= inicio["dia"] and transacao["data"]["mes"] <= fim["mes"] and transacao["data"]["dia"] <= fim["dia"]:
+      if converter_data(inicio) <= converter_data(transacao["data"]) <= converter_data(fim):
         print(transacao)
   
+    
 
     """
     SAÍDA:
