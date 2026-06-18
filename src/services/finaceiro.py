@@ -19,10 +19,11 @@ class SistemaFinanceiro:
   def listar_transacoes(self):
     from database.json_storage import carregar
     self.transacoes = carregar()
-    print("LISTA DE TRANSAÇÕES:")
+    lista_formatada = []
     for transacao in self.transacoes:
-      print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}")
-      
+      lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
+      lista_formatada.append(lista)
+    return lista_formatada
 
     
   def calcular_saldo(self):
@@ -40,28 +41,36 @@ class SistemaFinanceiro:
     
 
   def filtro_por_categoria(self, categoria):
-    print(f"CATEGORIA: {categoria}")
+    lista_por_categoria = []
+    from database.json_storage import carregar
+    self.transacoes = carregar()
     for transacao in self.transacoes:
       if transacao["categoria"] == categoria:
-        print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f}")
+        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f}"
+        lista_por_categoria.append(lista)
+    return lista_por_categoria
+
+    
         
 
 
   def total_receitas(self):
-    saldo, receita, despesa = self.calcular_saldo()
-    print("TRANSAÇÕES:")
+    _, receita, _ = self.calcular_saldo()
+    lista_por_receita = []
     for transacao in self.transacoes:
       if transacao["tipo"] == "receita":
-        print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f}")
-    print(f"TOTAL DE RECEITA: R${receita:.2f}")
+        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
+        lista_por_receita.append(lista)
+    return receita, lista_por_receita
 
   def total_despesas(self):
-    saldo, receita, despesa = self.calcular_saldo()
-    print("TRANSAÇÕES:")
+    _, _, despesa = self.calcular_saldo()
+    lista_por_despesas = []
     for transacao in self.transacoes:
       if transacao["tipo"] == "despesa":
-        print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f}")
-    print(f"TOTAL DE DESPESA: R${despesa:.2f}")
+        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
+        lista_por_despesas.append(lista)
+    return despesa, lista_por_despesas
 
   
   def filtrar_por_data(self, inicio, fim):
@@ -103,10 +112,12 @@ class SistemaFinanceiro:
     def converter_data(d):
       return(d["ano"], d["mes"], d["dia"])
     
+    lista_filtrada = []
     for transacao in transacao_por_data:
       if converter_data(inicio) <= converter_data(transacao["data"])<= converter_data(fim):
-        print(transacao)
-  
+        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
+        lista_filtrada.append(lista)
+    return lista_filtrada
     
 
     """
