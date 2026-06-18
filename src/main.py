@@ -52,20 +52,75 @@ print(f"SALDO FINAL: R${saldo:.2f}")
 """
 #-------------------------------------------
 #MENU
+
 while True:
-  print("Bem vindo ao seu controle financeiro!")
-  print("1-LISTAR TODAS AS TRANSAÇÕES\n" \
-  "2-LISTAR TRANSAÇÕES POR CATEGORIA\n" \
-  "3-LISTAR TRANSAÇÕES POR TIPO\n" \
-  "4-LISTAR TRANSAÇÕES POR PERÍODO\n" \
-  "5-CONSULTAR SALDO")
-  operador = input("O que gostaria de fazer(navegue por números!): ")
-  try:
-    operador = int(operador)
-  except ValueError:
-    print("Valor inválido. Digite apenas número para navegação!")
-    continue
-  
-  else:
-    print("Muito bem!")
-    
+    print("Bem vindo ao seu controle financeiro!")
+    print("1 > LISTAR TODAS AS TRANSAÇÕES\n" \
+    "2 > LISTAR TRANSAÇÕES POR CATEGORIA\n" \
+    "3 > LISTAR TRANSAÇÕES POR TIPO\n" \
+    "4 > LISTAR TRANSAÇÕES POR PERÍODO\n" \
+    "5 > CONSULTAR SALDO")
+    try:
+      operador = input("O que gostaria de fazer(navegue por números!): ")
+    except (KeyboardInterrupt, EOFError):
+      print('\nInterrupção recebida. Encerrando o programa.')
+      break
+
+    try:
+      operador = int(operador)
+    except ValueError:
+      print("Valor inválido. Navegue apenas com números!")
+      pass
+
+    match operador:
+
+        case 1:
+          lista = sistema.listar_transacoes()
+          print('LISTA DE TRANSAÇÕES')
+          for transacao in lista:
+            print(transacao)
+        
+        case 2:
+          from database.json_storage import carregar
+          lista = carregar()
+          categorias_unicas = set()
+          lista_de_categorias = []
+          cont = 0
+
+          print(f"Categorias dispoíveis:")
+          for transacao in lista:
+                categoria = transacao["categoria"]
+                if categoria not in categorias_unicas:
+                  cont += 1
+                  print(f"{cont} > {categoria}")
+                  dict_de_categorias = {cont: categoria}
+                  lista_de_categorias.append(dict_de_categorias)
+                  categorias_unicas.add(categoria)
+
+          operador = input("Qual categoria você gostaria de consultar: ")
+          
+          try:
+            operador = int(operador)
+          
+          except ValueError:
+            print("Valor inválido. Navague apenas com números!")
+            pass
+          else:
+            for categoria in lista_de_categorias:
+               for valor, chave in categoria.items():
+                  if valor == operador:
+                     lista_filtrada = sistema.filtro_por_categoria(chave)
+                     titulo_categoria = chave
+                     break
+              
+          print(f"TRANSAÇÕES POR CATEGORIA: {titulo_categoria}")
+          for transacoes in lista_filtrada:
+             print(transacoes)
+          
+
+               
+                  
+
+               
+
+      
