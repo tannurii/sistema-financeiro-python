@@ -117,7 +117,7 @@ while True:
           for transacoes in lista_filtrada:
              print(transacoes)
           
-
+        
                
                   
 
