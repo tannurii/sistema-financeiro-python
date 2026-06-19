@@ -50,8 +50,15 @@ class SistemaFinanceiro:
         lista_por_categoria.append(lista)
     return lista_por_categoria
 
-    
+  
+  def filtrar_por_tipo(self, tipo_escolhido):
+    transacoes = self.transacoes
+    return [transacao for transacao in transacoes if transacao["tipo"] == tipo_escolhido]
         
+        
+  def listar_tipos_unicos(self):
+    transacoes = self.transacoes
+    return list({transacao["tipo"] for transacao in transacoes})
 
 
   def total_receitas(self):
@@ -59,7 +66,7 @@ class SistemaFinanceiro:
     lista_por_receita = []
     for transacao in self.transacoes:
       if transacao["tipo"] == "receita":
-        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
+        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]} / TIPO: {transacao["tipo"]}"
         lista_por_receita.append(lista)
     return receita, lista_por_receita
 
@@ -68,7 +75,7 @@ class SistemaFinanceiro:
     lista_por_despesas = []
     for transacao in self.transacoes:
       if transacao["tipo"] == "despesa":
-        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
+        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]} / TIPO: {transacao["tipo"]}"
         lista_por_despesas.append(lista)
     return despesa, lista_por_despesas
 
