@@ -9,7 +9,8 @@ def menu():
         "2 > LISTAR TRANSAÇÕES POR CATEGORIA\n" \
         "3 > LISTAR TRANSAÇÕES POR TIPO\n" \
         "4 > LISTAR TRANSAÇÕES POR PERÍODO\n" \
-        "5 > CONSULTAR SALDO")
+        "5 > CONSULTAR SALDO\n" \
+        "0 > ENCERRAR")
   
 
 def opcao_1():
@@ -83,7 +84,30 @@ def opcao_3():
           for transacao in lista_filtrada:
             print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]} / TIPO: {transacao["tipo"]}")
       
-      
+def opcao_4():
+  inicio = input("Digite a data inicial: ").strip()
+  fim = input("Digite a data final: ").strip()
+  caracteres_validos = "0123456789- "
+  if len(inicio) != 10 or  len(fim) != 10:
+    print("Data inválida!")
+    pass
+  elif not all(c in caracteres_validos for c in inicio + fim):
+    print("Valor inválido. Utilize apenas números e -")
+    pass
+  else:
+    inicio = inicio.split(" ")
+    inicio = "-".join(inicio)
+    fim = fim.split(" ")
+    fim = "-".join(fim)
+    lista_filtrada = sistema.filtrar_por_data(inicio=inicio, fim=fim)
+    for transacao in lista_filtrada:
+      print(transacao)
+
+def opcao_5():
+  saldo, receita, despesa = sistema.calcular_saldo()
+  print(f"RECEITA TOTAL: R${receita:.2f}")
+  print(f"DESPESA TOTAL: R${despesa:.2f}")
+  print(f"SALDO FINAL: R${saldo:.2f}")
 
 
 
@@ -144,6 +168,7 @@ print(f"SALDO FINAL: R${saldo:.2f}")
 #MENU
 
 while True:
+    print()
     print("Bem vindo ao seu controle financeiro!")
     menu()
     try:
@@ -168,7 +193,17 @@ while True:
 
         case 3:
           opcao_3()
+
+        case 4:
+          opcao_4()
         
+        case 5:
+          opcao_5()
+        
+        case 0:
+          print()
+          print("Encerrando...")
+          break
                
                   
 

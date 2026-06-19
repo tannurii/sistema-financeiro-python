@@ -60,25 +60,6 @@ class SistemaFinanceiro:
     transacoes = self.transacoes
     return list({transacao["tipo"] for transacao in transacoes})
 
-
-  def total_receitas(self):
-    _, receita, _ = self.calcular_saldo()
-    lista_por_receita = []
-    for transacao in self.transacoes:
-      if transacao["tipo"] == "receita":
-        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]} / TIPO: {transacao["tipo"]}"
-        lista_por_receita.append(lista)
-    return receita, lista_por_receita
-
-  def total_despesas(self):
-    _, _, despesa = self.calcular_saldo()
-    lista_por_despesas = []
-    for transacao in self.transacoes:
-      if transacao["tipo"] == "despesa":
-        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]} / TIPO: {transacao["tipo"]}"
-        lista_por_despesas.append(lista)
-    return despesa, lista_por_despesas
-
   
   def filtrar_por_data(self, inicio, fim):
     transacao_por_data = []
