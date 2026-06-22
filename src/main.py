@@ -1,6 +1,6 @@
 from models.transacao import *
 from services.finaceiro import *
-
+from analytics.analise import *
 
 
   
@@ -10,6 +10,8 @@ def menu():
           "3 > LISTAR TRANSAÇÕES POR TIPO\n" \
           "4 > LISTAR TRANSAÇÕES POR PERÍODO\n" \
           "5 > CONSULTAR SALDO\n" \
+          "6 > RESUMO POR CATEGORIA\n" \
+          "7 > TOTAL POR TIPO\n" \
           "0 > ENCERRAR")
     
 
@@ -79,18 +81,29 @@ def opcao_3(sistema):
 def opcao_4(sistema):
    inicio = input("Digite a data inicial: ").strip()
    fim = input("Digite a data final: ").strip()
-   try:
-      
-   print(f"Formato inválido. Utilize YYYY-MM-DD")
    lista_filtrada = sistema.filtrar_por_periodo(inicio, fim)
    for transacao in lista_filtrada:
-      print(transacao)
+      print(transacao) 
 
 def opcao_5(sistema):
     saldo, receita, despesa = sistema.calcular_saldo()
     print(f"RECEITA TOTAL: R${receita:.2f}")
     print(f"DESPESA TOTAL: R${despesa:.2f}")
     print(f"SALDO FINAL: R${saldo:.2f}")
+
+
+def opcao_6(sistema):
+   analise = AnaliseFinanceira(sistema.transacoes)
+   resultado = analise.resumo_por_categoria()
+   print("\nRESUMO POR CATEGORIA")
+   print(resultado)
+
+
+def opcao_7(sistema):
+   analise = AnaliseFinanceira(sistema.transacoes)
+   resultado = analise.total_por_tipo()
+   print(f"TOTAL POR TIPO: ")
+   print(resultado)
 
 
 def main():
@@ -132,7 +145,12 @@ def main():
           
           case 5:
             opcao_5(sistema=sistema)
+
+          case 6:
+            opcao_6(sistema=sistema)
           
+          case 7:
+            opcao_7(sistema=sistema)
           case 0:
             print()
             print("Encerrando...")
