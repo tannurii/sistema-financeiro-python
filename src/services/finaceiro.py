@@ -40,12 +40,12 @@ class SistemaFinanceiro:
     return saldo, receita, despesa
     
 
-  def filtro_por_categoria(self, categoria):
+  def filtro_por_categoria(self, categoria_escolhida):
     lista_por_categoria = []
     from database.json_storage import carregar
     self.transacoes = carregar()
     for transacao in self.transacoes:
-      if transacao["categoria"] == categoria:
+      if transacao["categoria"] == categoria_escolhida:
         lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f}"
         lista_por_categoria.append(lista)
     return lista_por_categoria
@@ -61,59 +61,21 @@ class SistemaFinanceiro:
     return list({transacao["tipo"] for transacao in transacoes})
 
   
-  def filtrar_por_data(self, inicio, fim):
-    transacao_por_data = []
+  def filtrar_por_periodo(self, inicio, fim):
+    transacoes = self.transacoes
+    from datetime import datetime
     
-    for transacao in self.transacoes:
-      
-      data_dict = transacao["data"]
-      data_dict = data_dict.split("-")
-      data_dict = {
-        "ano": int(data_dict[0]),
-        "mes": int(data_dict[1]),
-        "dia": int(data_dict[2])
-      }
+    data_inicial = datetime.strptime(inicio, "%Y-%m-%d")
+    data_final = datetime.strptime(fim, "%Y-%m-%d")
 
-      transacao = {
-        "valor": transacao["valor"],
-        "categoria": transacao["categoria"],
-        "tipo": transacao["tipo"],
-        "data": data_dict
-      }
-      transacao_por_data.append(transacao)
-    
-    
-    inicio = inicio.split("-")
-    inicio = {
-      "ano": int(inicio[0]),
-      "mes": int(inicio[1]),
-      "dia": int(inicio[2])
-    }
+    return [
+              f"DATA: {transacao['data']} / "
+              f"VALOR: {'-' if transacao['tipo'] == 'despesa' else '+'}R${transacao['valor']:.2f} / "
+              f"CATEGORIA: {transacao['categoria']} / "
+              f"TIPO: {transacao['tipo']}"
+          for transacao in transacoes if data_inicial <= datetime.strptime(transacao["data"], "%Y-%m-%d") <= data_final]
+  
+  
+  
+  
 
-    fim = fim.split("-")
-   
-    fim = {
-      "ano": int(fim[0]),
-      "mes": int(fim[1]),
-      "dia": int(fim[2])
-    }
-    def converter_data(d):
-      return(d["ano"], d["mes"], d["dia"])
-    
-    lista_filtrada = []
-    for transacao in transacao_por_data:
-      if converter_data(inicio) <= converter_data(transacao["data"])<= converter_data(fim):
-        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
-        lista_filtrada.append(lista)
-    return lista_filtrada
-    
-
-    """
-    SAÍDA:
-    {'valor': 1000, 'categoria': 'salário', 'tipo': 'receita', 'data': {'ano': 2026, 'mes': 1, 'dia': 1}}
-    {'valor': 200, 'categoria': 'alimentação', 'tipo': 'despesa', 'data': {'ano': 2026, 'mes': 1, 'dia': 2}}
-    {'valor': 240, 'categoria': 'alimentação', 'tipo': 'despesa', 'data': {'ano': 2026, 'mes': 1, 'dia': 3}}
-    """
-      
-      
-      

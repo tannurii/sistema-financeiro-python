@@ -7,4 +7,4 @@ def carregar():
   import json
   with open(r"data\transacoes.json", "r") as f:
     dados = json.load(f)
-  return dados
+  

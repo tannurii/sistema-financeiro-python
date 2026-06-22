@@ -1,212 +1,144 @@
 from models.transacao import *
 from services.finaceiro import *
 
-sistema = SistemaFinanceiro()
 
 
+  
 def menu():
-  print("1 > LISTAR TODAS AS TRANSAÇÕES\n" \
-        "2 > LISTAR TRANSAÇÕES POR CATEGORIA\n" \
-        "3 > LISTAR TRANSAÇÕES POR TIPO\n" \
-        "4 > LISTAR TRANSAÇÕES POR PERÍODO\n" \
-        "5 > CONSULTAR SALDO\n" \
-        "0 > ENCERRAR")
-  
+    print("1 > LISTAR TODAS AS TRANSAÇÕES\n" \
+          "2 > LISTAR TRANSAÇÕES POR CATEGORIA\n" \
+          "3 > LISTAR TRANSAÇÕES POR TIPO\n" \
+          "4 > LISTAR TRANSAÇÕES POR PERÍODO\n" \
+          "5 > CONSULTAR SALDO\n" \
+          "0 > ENCERRAR")
+    
 
-def opcao_1():
-  lista = sistema.listar_transacoes()
-  print(f"LISTA DE TRANSAÇÕES: ")
-  for transacao in lista:
-      print(transacao)
-
-
-def opcao_2():
-  from database.json_storage import carregar
-
-  lista = carregar()
-  categorias_unicas = set()
-  lista_de_categorias = []
-  cont = 0
-
-  print(f"Categorias dispoíveis:")
-  for transacao in lista:
-    categoria = transacao["categoria"]
-    if categoria not in categorias_unicas:
-      cont += 1
-      print(f"{cont} > {categoria}")
-      dict_de_categorias = {cont: categoria}
-      lista_de_categorias.append(dict_de_categorias)
-      categorias_unicas.add(categoria)
-
-  operador = input("Qual categoria você gostaria de consultar: ")
-
-  try:
-    operador = int(operador)
-  except ValueError or KeyboardInterrupt:
-    print("Valor inválido. Navague apenas com números!")
-    pass
-  else:
-    for categoria in lista_de_categorias:
-      for valor, chave in categoria.items():
-        if valor == operador:
-          lista_filtrada = sistema.filtro_por_categoria(chave)
-          titulo_categoria = chave
-          break
-
-  print(f"TRANSAÇÕES POR CATEGORIA: {titulo_categoria}")
-  for transacoes in lista_filtrada:
-    print(transacoes)
+def opcao_1(sistema):
+    lista = sistema.listar_transacoes()
+    print(f"LISTA DE TRANSAÇÕES: ")
+    for transacao in lista:
+        print(transacao)
 
 
-def opcao_3():
-  tipos_filtrados = sistema.listar_tipos_unicos()
-  lista_de_tipos = []
-  cont = 0
-  for cont, tipo in enumerate(tipos_filtrados, cont):
-    cont += 1
-    print(f"{cont} > {tipo}")
-    dict_tipos = {cont: tipo}
-    lista_de_tipos.append(dict_tipos)
-  
-  operador = input("Qual dos tipos quer consultar: ")
+def opcao_2(sistema):
+    from database.json_storage import carregar
 
-  try:
-    operador = int(operador)
-  
-  except ValueError or KeyboardInterrupt:
-    print("Valor inválido. Navegue apenas com números!")
-    pass
-  else:
-    for tipo in lista_de_tipos:
-      for valor, chave in tipo.items():
-        if operador == valor:
-          lista_filtrada = sistema.filtrar_por_tipo(chave)
-          for transacao in lista_filtrada:
-            print(f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]} / TIPO: {transacao["tipo"]}")
-      
-def opcao_4():
-  inicio = input("Digite a data inicial: ").strip()
-  fim = input("Digite a data final: ").strip()
-  caracteres_validos = "0123456789- "
-  if len(inicio) != 10 or  len(fim) != 10:
-    print("Data inválida!")
-    pass
-  elif not all(c in caracteres_validos for c in inicio + fim):
-    print("Valor inválido. Utilize apenas números e -")
-    pass
-  else:
-    inicio = inicio.split(" ")
-    inicio = "-".join(inicio)
-    fim = fim.split(" ")
-    fim = "-".join(fim)
-    lista_filtrada = sistema.filtrar_por_data(inicio=inicio, fim=fim)
-    for transacao in lista_filtrada:
-      print(transacao)
+    transacoes = carregar()
+    
+    print(f"Categorias dispoíveis:")
+   
+    categorias_unicas = {transacao["categoria"] for transacao in transacoes}
 
-def opcao_5():
-  saldo, receita, despesa = sistema.calcular_saldo()
-  print(f"RECEITA TOTAL: R${receita:.2f}")
-  print(f"DESPESA TOTAL: R${despesa:.2f}")
-  print(f"SALDO FINAL: R${saldo:.2f}")
-
-
-
-
-
-
-
-
-
-# Exemplos
-sistema.adicionar_transacao(valor=1000, categoria="salário", tipo="receita", data="2026-01-01")
-sistema.adicionar_transacao(valor=200, categoria="alimentação", tipo="despesa", data="2026-01-02")
-sistema.adicionar_transacao(valor=240, categoria="alimentação", tipo="despesa", data="2026-01-03")
-sistema.adicionar_transacao(valor=370, categoria="alimentação", tipo="despesa", data="2026-01-04")
-sistema.adicionar_transacao(valor=1000, categoria="extra", tipo="receita", data="2026-01-04")
-"""
-#SISTEMA PRINICPAL
-lista = sistema.listar_transacoes()
-print('LISTA DE TRANSAÇÕES')
-for transacao in lista:
-  print(transacao)
-
-print()
-categoria = "alimentação"
-lista_por_categoria = sistema.filtro_por_categoria(categoria)
-print(f"LISTA POR CATEGORIA: {categoria}")
-for transacao in lista_por_categoria:
-  print(transacao)
-
-print()
-receita, lista_por_receita = sistema.total_receitas()
-
-print("LISTA DE RECEITAS:")
-for transacao in lista_por_receita:
-  print(transacao)
-print(f"SALDO DE RECEITA: R${receita:.2f}")
-
-print()
-
-despesa, lista_por_despesa = sistema.total_despesas()
-print(f"LISTA DE DESPESAS:")
-for transacao in lista_por_despesa:
-  print(transacao)
-print(f"SALDO DE DESPESA: R${despesa:.2f}")
-
-print()
-
-lista_por_data = sistema.filtrar_por_data("2026-01-02", "2026-04-10")
-print("LISTA POR PERÍODO: ")
-for transacao in lista_por_data:
-  print(transacao)
-
-print()
-saldo,_,_ = sistema.calcular_saldo()
-print(f"SALDO FINAL: R${saldo:.2f}")
-"""
-#-------------------------------------------
-#MENU
-
-while True:
-    print()
-    print("Bem vindo ao seu controle financeiro!")
-    menu()
-    try:
-      operador = input("O que gostaria de fazer(navegue por números!): ")
-    except (KeyboardInterrupt, EOFError):
-      print('\nInterrupção recebida. Encerrando o programa.')
-      break
+    mapa = {i: categoria for i, categoria in enumerate(categorias_unicas, 1)}
+    for i, categoria in mapa.items():
+       print(f"{i} > {categoria}")
 
     try:
+      operador = input("Qual categoria você gostaria de consultar: ")
       operador = int(operador)
-    except ValueError:
+      categoria_escolhida = mapa.get(operador)
+
+    except (ValueError, KeyboardInterrupt):
+      print("Valor inválido. Navague apenas com números!")
+      
+    else:
+      print(f"CATEGORIA ESCOLHIDA: {categoria_escolhida}")
+      
+      lista_filtrada = sistema.filtro_por_categoria(categoria_escolhida)
+      for transacao in lista_filtrada:
+         print(transacao)
+
+
+def opcao_3(sistema):
+    tipos_filtrados = sistema.listar_tipos_unicos()
+    
+    mapa = {i: tipo for i, tipo in enumerate(tipos_filtrados, 1)}
+    for i, tipo in mapa.items():
+      print(f"{i} > {tipo}")
+
+    try:
+      operador = input("Qual dos tipos quer consultar: ")
+      operador = int(operador)
+      tipo_escolhido = mapa.get(operador)
+
+    except (ValueError, KeyboardInterrupt):
       print("Valor inválido. Navegue apenas com números!")
-      pass
-
-    match operador:
-
-        case 1:
-          opcao_1()
+      
+    else:
+      lista_filtrada = sistema.filtrar_por_tipo(tipo_escolhido)
+      for transacao in lista_filtrada:
         
-        case 2:
-          opcao_2()
+        print(
+            f"DATA: {transacao['data']} / "
+            f"VALOR: {'-' if transacao['tipo'] == 'despesa' else '+'}R${transacao['valor']:.2f} / "
+            f"CATEGORIA: {transacao['categoria']} / "
+            f"TIPO: {transacao['tipo']}"
+        )
+  
 
-        case 3:
-          opcao_3()
+def opcao_4(sistema):
+   inicio = input("Digite a data inicial: ").strip()
+   fim = input("Digite a data final: ").strip()
+   try:
+      
+   print(f"Formato inválido. Utilize YYYY-MM-DD")
+   lista_filtrada = sistema.filtrar_por_periodo(inicio, fim)
+   for transacao in lista_filtrada:
+      print(transacao)
 
-        case 4:
-          opcao_4()
-        
-        case 5:
-          opcao_5()
-        
-        case 0:
-          print()
-          print("Encerrando...")
-          break
+def opcao_5(sistema):
+    saldo, receita, despesa = sistema.calcular_saldo()
+    print(f"RECEITA TOTAL: R${receita:.2f}")
+    print(f"DESPESA TOTAL: R${despesa:.2f}")
+    print(f"SALDO FINAL: R${saldo:.2f}")
+
+
+def main():
+  sistema = SistemaFinanceiro()
+  sistema.adicionar_transacao(valor=1000, categoria="salário", tipo="receita", data="2026-01-01")
+  sistema.adicionar_transacao(valor=200, categoria="alimentação", tipo="despesa", data="2026-01-02")
+  sistema.adicionar_transacao(valor=240, categoria="alimentação", tipo="despesa", data="2026-01-03")
+  sistema.adicionar_transacao(valor=370, categoria="alimentação", tipo="despesa", data="2026-01-04")
+  sistema.adicionar_transacao(valor=1000, categoria="extra", tipo="receita", data="2026-01-04")
+  while True:
+      print()
+      print("Bem vindo ao seu controle financeiro!")
+      menu()
+      try:
+        operador = input("O que gostaria de fazer(navegue por números!): ")
+      except (KeyboardInterrupt, EOFError):
+        print('\nInterrupção recebida. Encerrando o programa.')
+        break
+
+      try:
+        operador = int(operador)
+      except ValueError:
+        print("Valor inválido. Navegue apenas com números!")
+        pass
+
+      match operador:
+
+          case 1:
+            opcao_1(sistema=sistema)
+          
+          case 2:
+            opcao_2(sistema=sistema)
+
+          case 3:
+            opcao_3(sistema=sistema)
+
+          case 4:
+            opcao_4(sistema=sistema)
+          
+          case 5:
+            opcao_5(sistema=sistema)
+          
+          case 0:
+            print()
+            print("Encerrando...")
+            break
                
                   
 
-               
 
-      
+main()
