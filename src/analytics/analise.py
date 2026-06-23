@@ -30,7 +30,8 @@ class AnaliseFinanceira:
       values="valor",
       aggfunc="sum"
     )
-  
+
+
 
 
     

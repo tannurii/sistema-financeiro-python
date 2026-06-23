@@ -1,7 +1,7 @@
 from models.transacao import *
 from services.finaceiro import *
 from analytics.analise import *
-
+import pandas as pd
 
   
 def menu():
@@ -18,21 +18,31 @@ def menu():
           "11 > RECEITA E DESPESA\n" \
           "0 > ENCERRAR")
     
+def mostrar_tabela(self, dados):
+    #Função auxiliar
+    if not dados:
+       print("Nenhum dado encontrado.")
+       return
+    
+    elif isinstance(dados, pd.DataFrame):
+       print(dados.to_string(index=False))
+
+    else:
+      dados = pd.DataFrame(dados)
+      print(dados.to_string(index=False)) 
 
 def opcao_1(sistema):
+    
     lista = sistema.listar_transacoes()
     print(f"LISTA DE TRANSAÇÕES: ")
-    for transacao in lista:
-        print(transacao)
-
+    mostrar_tabela(lista)
+    
 
 def opcao_2(sistema):
     from database.json_storage import carregar
-
     transacoes = carregar()
-    
+
     print(f"Categorias dispoíveis:")
-   
     categorias_unicas = {transacao["categoria"] for transacao in transacoes}
 
     mapa = {i: categoria for i, categoria in enumerate(categorias_unicas, 1)}
@@ -49,11 +59,9 @@ def opcao_2(sistema):
       
     else:
       print(f"CATEGORIA ESCOLHIDA: {categoria_escolhida}")
-      
-      lista_filtrada = sistema.filtro_por_categoria(categoria_escolhida)
-      for transacao in lista_filtrada:
-         print(transacao)
-
+      lista = sistema.filtro_por_categoria(categoria_escolhida)
+      mostrar_tabela(lista)
+    
 
 def opcao_3(sistema):
     tipos_filtrados = sistema.listar_tipos_unicos()
@@ -72,25 +80,25 @@ def opcao_3(sistema):
       
     else:
       lista_filtrada = sistema.filtrar_por_tipo(tipo_escolhido)
-      for transacao in lista_filtrada:
+      mostrar_tabela(lista_filtrada)
         
-        print(
-            f"DATA: {transacao['data']} / "
-            f"VALOR: {'-' if transacao['tipo'] == 'despesa' else '+'}R${transacao['valor']:.2f} / "
-            f"CATEGORIA: {transacao['categoria']} / "
-            f"TIPO: {transacao['tipo']}"
-        )
-  
-
+        
 def opcao_4(sistema):
-   
-   inicio = input("Digite a data inicial(utilize o formato YYYY-MMM-DD): ").strip()
-   fim = input("Digite a data final: ").strip()
-  
-   lista_filtrada = sistema.filtrar_por_periodo(inicio, fim)
-   for transacao in lista_filtrada:
-      print(transacao) 
+  from datetime import datetime
 
+  inicio = input("Digite a data inicial(utilize o formato YYYY-MM-DD): ").strip()
+  fim = input("Digite a data final(utilize o formato YYYY-MM-DD): ").strip()
+
+  try:
+      datetime.strptime(inicio, "%Y-%m-%d")
+      datetime.strptime(fim, "%Y-%m-%d")
+  except ValueError:
+      print(f"Formato inválido. Utilize o formato YYYY-MM-DD")
+      return
+  else:
+   lista_filtrada = sistema.filtrar_por_periodo(inicio, fim)
+   mostrar_tabela(lista_filtrada)
+   
 
 def opcao_5(sistema):
     saldo, receita, despesa = sistema.calcular_saldo()
@@ -103,42 +111,42 @@ def opcao_6(sistema):
    analise = AnaliseFinanceira(sistema.transacoes)
    resultado = analise.resumo_por_categoria()
    print("\nRESUMO POR CATEGORIA")
-   print(resultado)
+   mostrar_tabela(resultado)
 
 
 def opcao_7(sistema):
    analise = AnaliseFinanceira(sistema.transacoes)
    resultado = analise.total_por_tipo()
    print(f"TOTAL POR TIPO: ")
-   print(resultado)
+   mostrar_tabela(resultado)
 
 
 def opcao_8(sistema):
   analise = AnaliseFinanceira(sistema.transacoes)
   resultado =  analise.ranking_transacoes()
   print(f"RANKING: ")
-  print(resultado)
+  mostrar_tabela(resultado)
 
 
 def opcao_9(sistema):
    analise = AnaliseFinanceira(sistema.transacoes)
    resultado = analise.gastos_por_mes()
    print("GASTOS POR MÊS: ")
-   print(resultado)
+   mostrar_tabela(resultado)
 
 
 def opcao_10(sistema):
    analise = AnaliseFinanceira(sistema.transacoes)
    resultado = analise.receita_por_mes()
    print("RECEITA POR MÊS:")
-   print(resultado)
+   mostrar_tabela(resultado)
   
 
 def opcao_11(sistema):
    analise = AnaliseFinanceira(sistema.transacoes)
    resultado = analise.receita_e_despesa()
    print("COMPARAÇÃO RECEITA E DESPESA: ")
-   print(resultado)
+   mostrar_tabela(resultado)
 
 
 def main():

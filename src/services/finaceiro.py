@@ -1,12 +1,12 @@
 class SistemaFinanceiro:
   def __init__(self):
-    
-    self.transacoes = []
+    from database.json_storage import carregar
+    self.transacoes = carregar()
     self.nova_transacao = {}
 
 
   def adicionar_transacao(self, valor, categoria, tipo, data):
-    from database.json_storage import salvar, carregar
+    from database.json_storage import salvar
     self.nova_transacao = {
       "valor": valor,
         "categoria": categoria,
@@ -18,14 +18,8 @@ class SistemaFinanceiro:
 
 
   def listar_transacoes(self):
-    from database.json_storage import carregar
-    lista_formatada = []
-    self.transacoes = carregar()
-    for transacao in self.transacoes:
-      lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
-      lista_formatada.append(lista)
-    return lista_formatada
-
+    return self.transacoes
+    
     
   def calcular_saldo(self):
     receita = 0
@@ -42,39 +36,39 @@ class SistemaFinanceiro:
     
 
   def filtro_por_categoria(self, categoria_escolhida):
-    lista_por_categoria = []
-    from database.json_storage import carregar
-    self.transacoes = carregar()
-    for transacao in self.transacoes:
-      if transacao["categoria"] == categoria_escolhida:
-        lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f}"
-        lista_por_categoria.append(lista)
-    return lista_por_categoria
-
+    return [transacao for transacao in self.transacoes if transacao["categoria"] == categoria_escolhida]
+    
+    
   
   def filtrar_por_tipo(self, tipo_escolhido):
-    transacoes = self.transacoes
-    return [transacao for transacao in transacoes if transacao["tipo"] == tipo_escolhido]
-        
+    return [transacao for transacao in self.transacoes if transacao["tipo"] == tipo_escolhido]
+    
+
         
   def listar_tipos_unicos(self):
+    #função auxiliar
     transacoes = self.transacoes
     return list({transacao["tipo"] for transacao in transacoes})
 
   
   def filtrar_por_periodo(self, inicio, fim):
-    transacoes = self.transacoes
-    from datetime import datetime
+    import pandas as pd
     
-    data_inicial = datetime.strptime(inicio, "%Y-%m-%d")
-    data_final = datetime.strptime(fim, "%Y-%m-%d")
+    df = pd.DataFrame(self.transacoes)
+    df["data"] = pd.to_datetime(df["data"])
+    
+    
+    data_inicial = pd.to_datetime(inicio, format="%Y-%m-%d")
+    data_final = pd.to_datetime(fim, format="%Y-%m-%d")
 
-    return [
-              f"DATA: {transacao['data']} / "
-              f"VALOR: {'-' if transacao['tipo'] == 'despesa' else '+'}R${transacao['valor']:.2f} / "
-              f"CATEGORIA: {transacao['categoria']} / "
-              f"TIPO: {transacao['tipo']}"
-          for transacao in transacoes if data_inicial <= datetime.strptime(transacao["data"], "%Y-%m-%d") <= data_final]
+    
+    df_filtrado = df[(df["data"] >= data_inicial) & (df["data"] <= data_final)]
+    return df_filtrado
+
+
+
+
+    
   
   
   
