@@ -1,5 +1,6 @@
 class SistemaFinanceiro:
   def __init__(self):
+    
     self.transacoes = []
     self.nova_transacao = {}
 
@@ -18,8 +19,8 @@ class SistemaFinanceiro:
 
   def listar_transacoes(self):
     from database.json_storage import carregar
-    self.transacoes = carregar()
     lista_formatada = []
+    self.transacoes = carregar()
     for transacao in self.transacoes:
       lista = f"DATA: {transacao["data"]} / VALOR: {"-" if transacao["tipo"] == "despesa" else "+"}R${transacao["valor"]:.2f} / CATEGORIA: {transacao["categoria"]}"
       lista_formatada.append(lista)
