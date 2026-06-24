@@ -430,5 +430,1301 @@
         "categoria": "lazer",
         "tipo": "despesa",
         "data": "2026-12-25"
+    },
+    {
+        "valor": 1200,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-01-05"
+    },
+    {
+        "valor": 300,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-01-10"
+    },
+    {
+        "valor": 150,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-01-15"
+    },
+    {
+        "valor": 2000,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-02-03"
+    },
+    {
+        "valor": 400,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-02-08"
+    },
+    {
+        "valor": 220,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-02-12"
+    },
+    {
+        "valor": 1800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-03-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-03-05"
+    },
+    {
+        "valor": 320,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-03-10"
+    },
+    {
+        "valor": 2100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-04-01"
+    },
+    {
+        "valor": 450,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-04-12"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-04-07"
+    },
+    {
+        "valor": 800,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-05-03"
+    },
+    {
+        "valor": 600,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-05-06"
+    },
+    {
+        "valor": 200,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-05-10"
+    },
+    {
+        "valor": 3000,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-06-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-06-05"
+    },
+    {
+        "valor": 700,
+        "categoria": "investimento",
+        "tipo": "receita",
+        "data": "2026-06-08"
+    },
+    {
+        "valor": 2500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-07-01"
+    },
+    {
+        "valor": 480,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-07-06"
+    },
+    {
+        "valor": 300,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-07-09"
+    },
+    {
+        "valor": 1200,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-08-02"
+    },
+    {
+        "valor": 650,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-08-05"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-08-11"
+    },
+    {
+        "valor": 2800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-09-01"
+    },
+    {
+        "valor": 520,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-09-04"
+    },
+    {
+        "valor": 270,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-09-09"
+    },
+    {
+        "valor": 1400,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-10-03"
+    },
+    {
+        "valor": 700,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-10-06"
+    },
+    {
+        "valor": 330,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-10-10"
+    },
+    {
+        "valor": 3100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-11-01"
+    },
+    {
+        "valor": 550,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-11-05"
+    },
+    {
+        "valor": 400,
+        "categoria": "extra",
+        "tipo": "receita",
+        "data": "2026-11-10"
+    },
+    {
+        "valor": 3500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-12-01"
+    },
+    {
+        "valor": 800,
+        "categoria": "presentes",
+        "tipo": "despesa",
+        "data": "2026-12-20"
+    },
+    {
+        "valor": 600,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-12-25"
+    },
+    {
+        "valor": 1200,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-01-05"
+    },
+    {
+        "valor": 300,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-01-10"
+    },
+    {
+        "valor": 150,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-01-15"
+    },
+    {
+        "valor": 2000,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-02-03"
+    },
+    {
+        "valor": 400,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-02-08"
+    },
+    {
+        "valor": 220,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-02-12"
+    },
+    {
+        "valor": 1800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-03-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-03-05"
+    },
+    {
+        "valor": 320,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-03-10"
+    },
+    {
+        "valor": 2100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-04-01"
+    },
+    {
+        "valor": 450,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-04-12"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-04-07"
+    },
+    {
+        "valor": 800,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-05-03"
+    },
+    {
+        "valor": 600,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-05-06"
+    },
+    {
+        "valor": 200,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-05-10"
+    },
+    {
+        "valor": 3000,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-06-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-06-05"
+    },
+    {
+        "valor": 700,
+        "categoria": "investimento",
+        "tipo": "receita",
+        "data": "2026-06-08"
+    },
+    {
+        "valor": 2500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-07-01"
+    },
+    {
+        "valor": 480,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-07-06"
+    },
+    {
+        "valor": 300,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-07-09"
+    },
+    {
+        "valor": 1200,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-08-02"
+    },
+    {
+        "valor": 650,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-08-05"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-08-11"
+    },
+    {
+        "valor": 2800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-09-01"
+    },
+    {
+        "valor": 520,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-09-04"
+    },
+    {
+        "valor": 270,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-09-09"
+    },
+    {
+        "valor": 1400,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-10-03"
+    },
+    {
+        "valor": 700,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-10-06"
+    },
+    {
+        "valor": 330,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-10-10"
+    },
+    {
+        "valor": 3100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-11-01"
+    },
+    {
+        "valor": 550,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-11-05"
+    },
+    {
+        "valor": 400,
+        "categoria": "extra",
+        "tipo": "receita",
+        "data": "2026-11-10"
+    },
+    {
+        "valor": 3500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-12-01"
+    },
+    {
+        "valor": 800,
+        "categoria": "presentes",
+        "tipo": "despesa",
+        "data": "2026-12-20"
+    },
+    {
+        "valor": 600,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-12-25"
+    },
+    {
+        "valor": 1200,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-01-05"
+    },
+    {
+        "valor": 300,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-01-10"
+    },
+    {
+        "valor": 150,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-01-15"
+    },
+    {
+        "valor": 2000,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-02-03"
+    },
+    {
+        "valor": 400,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-02-08"
+    },
+    {
+        "valor": 220,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-02-12"
+    },
+    {
+        "valor": 1800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-03-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-03-05"
+    },
+    {
+        "valor": 320,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-03-10"
+    },
+    {
+        "valor": 2100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-04-01"
+    },
+    {
+        "valor": 450,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-04-12"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-04-07"
+    },
+    {
+        "valor": 800,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-05-03"
+    },
+    {
+        "valor": 600,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-05-06"
+    },
+    {
+        "valor": 200,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-05-10"
+    },
+    {
+        "valor": 3000,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-06-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-06-05"
+    },
+    {
+        "valor": 700,
+        "categoria": "investimento",
+        "tipo": "receita",
+        "data": "2026-06-08"
+    },
+    {
+        "valor": 2500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-07-01"
+    },
+    {
+        "valor": 480,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-07-06"
+    },
+    {
+        "valor": 300,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-07-09"
+    },
+    {
+        "valor": 1200,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-08-02"
+    },
+    {
+        "valor": 650,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-08-05"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-08-11"
+    },
+    {
+        "valor": 2800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-09-01"
+    },
+    {
+        "valor": 520,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-09-04"
+    },
+    {
+        "valor": 270,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-09-09"
+    },
+    {
+        "valor": 1400,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-10-03"
+    },
+    {
+        "valor": 700,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-10-06"
+    },
+    {
+        "valor": 330,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-10-10"
+    },
+    {
+        "valor": 3100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-11-01"
+    },
+    {
+        "valor": 550,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-11-05"
+    },
+    {
+        "valor": 400,
+        "categoria": "extra",
+        "tipo": "receita",
+        "data": "2026-11-10"
+    },
+    {
+        "valor": 3500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-12-01"
+    },
+    {
+        "valor": 800,
+        "categoria": "presentes",
+        "tipo": "despesa",
+        "data": "2026-12-20"
+    },
+    {
+        "valor": 600,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-12-25"
+    },
+    {
+        "valor": 1200,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-01-05"
+    },
+    {
+        "valor": 300,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-01-10"
+    },
+    {
+        "valor": 150,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-01-15"
+    },
+    {
+        "valor": 2000,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-02-03"
+    },
+    {
+        "valor": 400,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-02-08"
+    },
+    {
+        "valor": 220,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-02-12"
+    },
+    {
+        "valor": 1800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-03-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-03-05"
+    },
+    {
+        "valor": 320,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-03-10"
+    },
+    {
+        "valor": 2100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-04-01"
+    },
+    {
+        "valor": 450,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-04-12"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-04-07"
+    },
+    {
+        "valor": 800,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-05-03"
+    },
+    {
+        "valor": 600,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-05-06"
+    },
+    {
+        "valor": 200,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-05-10"
+    },
+    {
+        "valor": 3000,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-06-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-06-05"
+    },
+    {
+        "valor": 700,
+        "categoria": "investimento",
+        "tipo": "receita",
+        "data": "2026-06-08"
+    },
+    {
+        "valor": 2500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-07-01"
+    },
+    {
+        "valor": 480,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-07-06"
+    },
+    {
+        "valor": 300,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-07-09"
+    },
+    {
+        "valor": 1200,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-08-02"
+    },
+    {
+        "valor": 650,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-08-05"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-08-11"
+    },
+    {
+        "valor": 2800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-09-01"
+    },
+    {
+        "valor": 520,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-09-04"
+    },
+    {
+        "valor": 270,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-09-09"
+    },
+    {
+        "valor": 1400,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-10-03"
+    },
+    {
+        "valor": 700,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-10-06"
+    },
+    {
+        "valor": 330,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-10-10"
+    },
+    {
+        "valor": 3100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-11-01"
+    },
+    {
+        "valor": 550,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-11-05"
+    },
+    {
+        "valor": 400,
+        "categoria": "extra",
+        "tipo": "receita",
+        "data": "2026-11-10"
+    },
+    {
+        "valor": 3500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-12-01"
+    },
+    {
+        "valor": 800,
+        "categoria": "presentes",
+        "tipo": "despesa",
+        "data": "2026-12-20"
+    },
+    {
+        "valor": 600,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-12-25"
+    },
+    {
+        "valor": 1200,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-01-05"
+    },
+    {
+        "valor": 300,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-01-10"
+    },
+    {
+        "valor": 150,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-01-15"
+    },
+    {
+        "valor": 2000,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-02-03"
+    },
+    {
+        "valor": 400,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-02-08"
+    },
+    {
+        "valor": 220,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-02-12"
+    },
+    {
+        "valor": 1800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-03-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-03-05"
+    },
+    {
+        "valor": 320,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-03-10"
+    },
+    {
+        "valor": 2100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-04-01"
+    },
+    {
+        "valor": 450,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-04-12"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-04-07"
+    },
+    {
+        "valor": 800,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-05-03"
+    },
+    {
+        "valor": 600,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-05-06"
+    },
+    {
+        "valor": 200,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-05-10"
+    },
+    {
+        "valor": 3000,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-06-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-06-05"
+    },
+    {
+        "valor": 700,
+        "categoria": "investimento",
+        "tipo": "receita",
+        "data": "2026-06-08"
+    },
+    {
+        "valor": 2500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-07-01"
+    },
+    {
+        "valor": 480,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-07-06"
+    },
+    {
+        "valor": 300,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-07-09"
+    },
+    {
+        "valor": 1200,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-08-02"
+    },
+    {
+        "valor": 650,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-08-05"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-08-11"
+    },
+    {
+        "valor": 2800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-09-01"
+    },
+    {
+        "valor": 520,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-09-04"
+    },
+    {
+        "valor": 270,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-09-09"
+    },
+    {
+        "valor": 1400,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-10-03"
+    },
+    {
+        "valor": 700,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-10-06"
+    },
+    {
+        "valor": 330,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-10-10"
+    },
+    {
+        "valor": 3100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-11-01"
+    },
+    {
+        "valor": 550,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-11-05"
+    },
+    {
+        "valor": 400,
+        "categoria": "extra",
+        "tipo": "receita",
+        "data": "2026-11-10"
+    },
+    {
+        "valor": 3500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-12-01"
+    },
+    {
+        "valor": 800,
+        "categoria": "presentes",
+        "tipo": "despesa",
+        "data": "2026-12-20"
+    },
+    {
+        "valor": 600,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-12-25"
+    },
+    {
+        "valor": 1200,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-01-05"
+    },
+    {
+        "valor": 300,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-01-10"
+    },
+    {
+        "valor": 150,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-01-15"
+    },
+    {
+        "valor": 2000,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-02-03"
+    },
+    {
+        "valor": 400,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-02-08"
+    },
+    {
+        "valor": 220,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-02-12"
+    },
+    {
+        "valor": 1800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-03-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-03-05"
+    },
+    {
+        "valor": 320,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-03-10"
+    },
+    {
+        "valor": 2100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-04-01"
+    },
+    {
+        "valor": 450,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-04-12"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-04-07"
+    },
+    {
+        "valor": 800,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-05-03"
+    },
+    {
+        "valor": 600,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-05-06"
+    },
+    {
+        "valor": 200,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-05-10"
+    },
+    {
+        "valor": 3000,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-06-01"
+    },
+    {
+        "valor": 500,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-06-05"
+    },
+    {
+        "valor": 700,
+        "categoria": "investimento",
+        "tipo": "receita",
+        "data": "2026-06-08"
+    },
+    {
+        "valor": 2500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-07-01"
+    },
+    {
+        "valor": 480,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-07-06"
+    },
+    {
+        "valor": 300,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-07-09"
+    },
+    {
+        "valor": 1200,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-08-02"
+    },
+    {
+        "valor": 650,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-08-05"
+    },
+    {
+        "valor": 350,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-08-11"
+    },
+    {
+        "valor": 2800,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-09-01"
+    },
+    {
+        "valor": 520,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-09-04"
+    },
+    {
+        "valor": 270,
+        "categoria": "transporte",
+        "tipo": "despesa",
+        "data": "2026-09-09"
+    },
+    {
+        "valor": 1400,
+        "categoria": "freelance",
+        "tipo": "receita",
+        "data": "2026-10-03"
+    },
+    {
+        "valor": 700,
+        "categoria": "moradia",
+        "tipo": "despesa",
+        "data": "2026-10-06"
+    },
+    {
+        "valor": 330,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-10-10"
+    },
+    {
+        "valor": 3100,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-11-01"
+    },
+    {
+        "valor": 550,
+        "categoria": "alimenta\u00e7\u00e3o",
+        "tipo": "despesa",
+        "data": "2026-11-05"
+    },
+    {
+        "valor": 400,
+        "categoria": "extra",
+        "tipo": "receita",
+        "data": "2026-11-10"
+    },
+    {
+        "valor": 3500,
+        "categoria": "sal\u00e1rio",
+        "tipo": "receita",
+        "data": "2026-12-01"
+    },
+    {
+        "valor": 800,
+        "categoria": "presentes",
+        "tipo": "despesa",
+        "data": "2026-12-20"
+    },
+    {
+        "valor": 600,
+        "categoria": "lazer",
+        "tipo": "despesa",
+        "data": "2026-12-25"
     }
 ]

@@ -18,24 +18,20 @@ def menu():
           "11 > RECEITA E DESPESA\n" \
           "0 > ENCERRAR")
     
-def mostrar_tabela(self, dados):
+def mostrar_tabela(dados):
     #Função auxiliar
-    if not dados:
-       print("Nenhum dado encontrado.")
-       return
-    
-    elif isinstance(dados, pd.DataFrame):
-       print(dados.to_string(index=False))
+    if isinstance(dados, pd.DataFrame):
+       print(dados)
 
     else:
       dados = pd.DataFrame(dados)
-      print(dados.to_string(index=False)) 
+      print(dados)
 
 def opcao_1(sistema):
     
     lista = sistema.listar_transacoes()
     print(f"LISTA DE TRANSAÇÕES: ")
-    mostrar_tabela(lista)
+    mostrar_tabela(dados=lista)
     
 
 def opcao_2(sistema):
